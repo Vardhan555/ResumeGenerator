@@ -1,0 +1,37 @@
+body{
+    background-position: center;
+    /*background-color:#e4fbff;*/
+    background-image: url("https://bebs.org/wp-content/uploads/2019/05/form-background-1024x683-300x200.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color:white;
+}
+/*#cv-form{
+    /*display:none;*/
+
+
+#cv-template{
+    display: none;
+}
+.myimg{
+    border-radius: 50%;
+    width:200px;
+    height: 200px;
+}
+
+.background{
+    background-color:#7CB9E8;
+}
+.back{
+    background-color: white;
+    color:black;
+}
+.background1{
+    background-color: #B9D9EB;
+}
+@media print {
+    .noprint {
+       visibility: hidden;
+    }
+ }

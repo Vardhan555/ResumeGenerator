@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <title>Resume Generator</title>
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-4">Resume Generator</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <!--1st col-->
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <!--Name-->
+                    <label for="">Name</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--gender-->
+                    <label for="genField">Gender</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--Dob-->
+                    <label for="DField">Date Of Birth</label>
+                    <input type="date" id="DField" placeholder="Enter here" class="form-control">
+                </div>
+
+
+                <div class="form-group mt-3">
+                    <!--Phone number-->
+                    <label for="">Phone Number</label>
+                    <input type="tel" id="phoneField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--email-->
+                    <label for="">E-mail</label>
+                    <input type="email" id="emailField" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-3">
+                    <!--image -->>
+                    <label for="">Select image</label>
+                    <input id="imageField" type="file" class="form-control" />
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--address-->
+                    <label for="adField">D.No/Address</label>
+                    <textarea id="adField" placeholder="Enter here" class="form-control" rows="4"></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--city-->
+                    <label for="">City</label>
+                    <input type="text" id="citField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--State-->
+                    <label for="stField">State</label>
+                    <input type="text" id="stField" placeholder="Enter here" class="form-control">
+                </div>
+                <p class="text-uppercase my-3">Social Profiles</p>
+
+                <div class="form-group ">
+                    <!--Facebook-->
+                    <label for="">Facebook</label>
+                    <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <!--LinkedIn-->
+                    <label for="">LinkedIn</label>
+                    <input type="text" id="linkinField" placeholder="Enter here" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!--2nd col-->
+                <h3>Professional Information</h3>
+
+                <div class="form-group" id="aq">
+                    <!--Academic Qualification-->
+                    <label for="">Academic Qualification</label>
+                    <textarea placeholder="Enter here" class="form-control acqField" rows="3"></textarea>
+
+
+                    <div class="container text-center mt-2" id="aqAdButton">
+                        <button onclick="addNewAQField()" class="btn btn-dark btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+                <div class="form-group mt-3" id="we">
+                    <!--Work Experience-->
+                    <label for="">Work Experience</label>
+                    <textarea placeholder="Enter here" class="form-control WorField" rows="3"></textarea>
+                    <div class="container text-center mt-2" id="weAdButton">
+                        <button class="btn btn-dark btn-sm" onclick="addNewWEField()">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3" id="ski">
+                    <!--Skills-->
+                    <label for="">Skills</label>
+                    <textarea placeholder="Enter here" class="form-control skiField" rows="3"></textarea>
+                    <div class="container text-center mt-2" id="skiAdButton">
+                        <button class="btn btn-dark btn-sm" onclick="addNewSKField()">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3" id="lan">
+                    <!--Languages-->
+                    <label for="">Language Proficiency</label>
+                    <textarea placeholder="Enter here" class="form-control lanField" rows="3"></textarea>
+                    <div class="container text-center mt-2" id="LanAdButton">
+                        <button class="btn btn-dark btn-sm" onclick="addNewLanButton()">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-3">
+                <button onclick="generateCV()"  class="btn btn-dark btn-lg">Generate CV</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--cv template-->
+    <div class="container back" id="cv-template">
+
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!--fist col-->
+                <img id="imgT" src="https://i.stack.imgur.com/34AD2.jpg" alt="" class="img-fluid myimg" />
+
+                <div class="container">
+                    <p id="nameT1">Sai Vardhan</p>
+                    <p id="dobT">27/11/2001</p>
+                    <p id="numT">12345678</p>
+                    <p id="addressT">address</p>
+                    <p id="cityT">city</p>
+                    <p id="StateT">State</p>
+                    <p><a id="emT" href="#1">saivardhanvegi@gmail.com</a></p>
+
+
+                    <hr />
+                    <p><a id="fbT" href="#1">https://facebook.com</a></p>
+
+                    <p><a id="linkT" href="#1">https://LinkedIn.com</a></p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-8 py-5">
+                <!--second col-->
+                <h1 id="nameT2" class="text-center" style="font-weight: 900;">Sai Vardhan</h1>
+
+                <!--card-->
+                <div class="card mt-4 ">
+                    <div class="card-header background1">
+                        <!--Academic Quali-->
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background1">
+                        <!--Work exp-->
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background1">
+                        <!--skills-->
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="skiT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header background1">
+                        <!--languages-->
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="lanT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quaerat.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center ">
+                    <button onclick="printCV()" class="btn background1 noprint btn-lg">
+                        Print CV
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
